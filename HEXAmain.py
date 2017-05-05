@@ -96,7 +96,7 @@ class MyFirstGuiProgram(Ui_MainWindow):
         self.casesBox.clear()
         comboData=['Select Test Case:']
         for i in inputData:
-            comboData.append(i.strip('.hexa'))
+            comboData.append(i[:i.rfind('.hexa')])
         self.casesBox.addItems(comboData)
 
     def searchOffline(self):
