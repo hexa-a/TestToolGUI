@@ -216,7 +216,7 @@ class Ui_aboutgui(object):
         self.label_4.setOpenExternalLinks(True)
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(aboutgui)
-        self.label_5.setGeometry(QtCore.QRect(30, 270, 111, 16))
+        self.label_5.setGeometry(QtCore.QRect(30, 270, 121, 16))
         self.label_5.setObjectName("label_5")
         self.label_6 = QtWidgets.QLabel(aboutgui)
         self.label_6.setGeometry(QtCore.QRect(140, 150, 161, 31))
@@ -235,11 +235,11 @@ class Ui_aboutgui(object):
 
     def retranslateUi(self, aboutgui):
         _translate = QtCore.QCoreApplication.translate
-        aboutgui.setWindowTitle(_translate("aboutgui", "HEXA-A Test Tool v1.0"))
+        aboutgui.setWindowTitle(_translate("aboutgui", "HEXA-A Test Tool v4.0"))
         self.label_2.setText(_translate("aboutgui", "HEXA-A"))
         self.label_3.setText(_translate("aboutgui", "Copyright © HEXA-A Team"))
-        self.label_4.setText(_translate("aboutgui", "<a href=\"http://hexa-a.com/\">Online Test Tool</a>"))
-        self.label_5.setText(_translate("aboutgui", "<a href=\'mailto:support@hexa-a.com\'>support@hexa-a.com</a>"))
+        self.label_4.setText(_translate("aboutgui", "<a href=\"http://hexa-tool.com/\">Online Test Tool</a>"))
+        self.label_5.setText(_translate("aboutgui", "<a href=\'mailto:support@hexa-tool.com\'>support@hexa-tool.com</a>"))
         self.label_6.setText(_translate("aboutgui", "Test Tool"))
 
 if __name__ == "__main__":

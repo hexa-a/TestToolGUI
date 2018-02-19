@@ -1,7 +1,7 @@
 from urllib.request import urlopen
 
 #Global Variables
-myurl="http://hexa-a.com/offline/"
+myurl="http://hexa-tool.com/offline/"
 okStamp="Ok"
 
 class ToolTesting:

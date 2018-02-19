@@ -36,11 +36,11 @@ class checkCasesThread(QtCore.QThread):
             test_Output = "Unexpected Error!"
         test_Input = self.concat(test_Input[1:])
         if (test_Output == test_Answer) or (test_Output == (test_Answer + " ")):
-            return [1,("""Case {}: Passed\nInput: {}\nExpected Output:  {}\nGenerated Output: {}""".format(case_Index + 1, test_Input, test_Answer, test_Output))]
+            return [1,("""Case {}: Passed\nInput: {}\nExpected Output:  \"{}\"\nGenerated Output: \"{}\"""".format(case_Index + 1, test_Input, test_Answer, test_Output))]
         elif ((test_Output == (test_Answer + " \n")) or (test_Output == (test_Answer + "\n"))):
-            return [2,("""Case {}: Warning\nInput: {}\nExpected Output:  {}\nGenerated Output: {}""".format(case_Index + 1, test_Input, test_Answer, test_Output))]
+            return [2,("""Case {}: Warning\nInput: {}\nExpected Output:  \"{}\"\nGenerated Output: \"{}\"""".format(case_Index + 1, test_Input, test_Answer, test_Output))]
         else:
-            return [3,("""Case {}: Failed\nInput: {}\nExpected Output:  {}\nGenerated Output: {}""".format(case_Index + 1, test_Input, test_Answer, test_Output))]
+            return [3,("""Case {}: Failed\nInput: {}\nExpected Output:  \"{}\"\nGenerated Output: \"{}\"""".format(case_Index + 1, test_Input, test_Answer, test_Output))]
     def run(self):
         for l in range(len(self.test_Input)):
             res = self.check_case(l, self.test_Input[l], self.test_Answer[l])
@@ -106,6 +106,9 @@ class MyFirstGuiProgram(Ui_MainWindow):
 
     def begin_Test(self, CaseFile, FilePath):
         test_Cases = self.toolobject.open_Offline_Cases(CaseFile)
+        if (test_Cases == -1):
+            self.statusBar.showMessage(str(CaseFile)+", File Not Found!", 3000)
+            return
         # Get Input and Modle Answers
         test_Input, test_Answer = self.toolobject.split_Data(FilePath, test_Cases)
         self.casesnumber=len(test_Input)
